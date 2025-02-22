@@ -1,0 +1,308 @@
+h1 { // This is a selector
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: aquamarine;
+}
+
+/*Selectors are used to target the HTML elements on which the CSS rules will be applied.*/
+
+/*
+Selectors search int the HTML document for the elements that match the selector and then apply the CSS rules to those elements.
+
+They can:
+- Select by element: h1, p, div, etc.
+- Select by class: .class-name
+- Select by id: #id-name
+
+You can chain selectors together to create more specific rules.
+For example:
+
+h1, h2 {  --> This will apply the rules to both h1 and h2 elements.
+    color: red;
+}
+
+h1 h2 { --> This will apply the rules to h2 elements that are inside h1 elements.
+    color: red;
+}
+
+.hero > h1 { --> This will apply the rules to h1 elements that are direct children of elements with the class hero.
+    color: red;
+}
+*/
+
+/*Attributes*/
+
+
+/*
+If we have:
+
+h1 {
+    color: red;
+}
+
+.main-title {
+    color: blue;
+}
+
+-------------------
+<h1 class="main-title">Hello World</h1> --> Will this be red or blue?
+
+The answer is blue. The class selector is more specific than the element selector. This is Specificity.
+
+ID > Class > Element --> This is the order of specificity.
+*/
+
+/*Pseudo-classes*/
+
+p {
+    color: red;
+}
+
+.paragraph {
+    color: blue;  /* --> p will be blue. */
+}
+
+/*Layout Attributes*/
+
+/*
+The box model --> Every element in HTML is a box. The box model is a way to understand how these boxes are rendered on the page.
+*/
+
+/* From out to in we have -> margin -> border -> padding -> content*/
+
+.paragraph_free {
+    width: 50%; /* -- > width and height is better set in % */
+    height: 50%;
+    margin: 50px;
+    border: 1px solid black;
+    padding: 50px;
+    /* Now Lets centralize the text inside the box */
+    text-align: center;
+    justify-content: center;
+}
+
+.hero {
+    width: 50%;
+    height: 50%;
+    margin-left: 80px;
+    border: 1px solid black;
+    padding: 50px 25px;
+    /* Padding attribute can be done in 3 forms:
+     padding: npx; -> top bottom right left (same value)
+     padding: npx npx; -> top/bottom right/left (2 values for each)
+     padding: npx npx npx npx -> top right bottom left
+     */
+    text-align: center;
+    justify-content: center;
+}
+/*
+We can also do individually, like:
+
+padding-top: 50px;
+margin-right: 25px;
+etc...
+*/
+
+/*
+background color is applied to the content and to the padding but not border and margin.
+*/
+
+/*
+You can also use rem instead of px. 1rem is equal to the font-size of the root element (usually the <html> element).
+*/
+
+/*Now the border we have:*/
+
+.test_border {
+    border: 1px solid black; /* size type color */
+    border-radius: 10px; /* This will make the corners round */
+}
+
+/*
+Now with margin we have the same as padding, but it will be outside the border.
+*/
+
+.test_margin {
+    margin: 20px 10px 30px 40px; /* top right bottom left */
+}
+
+/*
+Display property:
+*/
+
+.first, .sec{
+    display: inline;
+    margin: 10px;
+}
+
+.third, .fourth{
+    display: block;
+}
+
+.inlineblock, .inlineblockB{
+    display: inline-block;
+    margin: 10px;
+}
+
+/*Display Flex*/
+
+/*
+div{
+    display: flex; --> This will make all divs flex and is a go to way to make a layout.
+    background-color: lightblue;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+*/
+
+
+/*Pseudo-classes*/
+
+button:hover{
+    background-color: aquamarine;
+    transition: .6s ease all;
+    transform: translateY(-4px);
+}
+
+/*Font Family*/
+
+html {
+    font-family: Verdana, sans-serif;
+    font-size: 1rem;
+}
+
+/*More background properties:*/
+
+/*
+div {
+    background-image: url('path/to/image.jpg');
+    background-size: cover; --> This will make the image cover the entire div.
+    background-position: center; --> This will center the image.
+    background-repeat: no-repeat; --> This will make the image not repeat.
+    background-attachment: fixed; --> This will make the image fixed.
+}
+
+You can put all of these in one line like:
+
+div {
+    background: color skyblue url('path/to/image.jpg') center/cover no-repeat fixed;
+*/
+
+/*Shadow*/
+
+.shadow {
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); /* x-offset y-offset blur spread color */
+}
+
+/*
+You can use this site to see visually the shadow: https://www.cssmatic.com/box-shadow
+*/
+
+/*Animation*/
+
+/*
+You can just search for the animations in the internet and copy and paste the code.
+Like this site: https://developer.mozilla.org/en-US/docs/Web/CSS/animation
+*/
+
+@keyframes colorchange {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+.animation {
+    animation-name: colorchange;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/*
+There also have a shorthand for this --> inline:
+div {
+    animation: colorchange 4s infinite;
+                                         }
+*/
+
+
+.MakeBox {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation: colorchange 4s infinite;
+}
+
+/*Media Queries*/
+
+/*
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightgray;
+    text-align: center;
+}
+
+!* Estilo padrão para telas grandes *!
+.container {
+    width: 80%;
+    margin: auto;
+    background-color: #d41919;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+!* Media query para telas menores que 768px (tablets e celulares) *!
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+}
+
+!* Media query para telas menores que 480px (celulares pequenos) *!
+@media screen and (max-width: 480px) {
+    body {
+        background-color: #09a9dc;
+    }
+
+    .container {
+        font-size: 14px;
+    }
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
