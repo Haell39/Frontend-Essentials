@@ -1,5 +1,5 @@
-h1 { // This is a selector
-    font-size: 48px;
+h1 {
+/ / This is a selector font-size: 48 px;
     font-weight: 700;
     margin-bottom: 16px;
     color: aquamarine;
@@ -60,7 +60,7 @@ p {
 }
 
 .paragraph {
-    color: blue;  /* --> p will be blue. */
+    color: blue; /* --> p will be blue. */
 }
 
 /*Layout Attributes*/
@@ -96,6 +96,7 @@ The box model --> Every element in HTML is a box. The box model is a way to unde
     text-align: center;
     justify-content: center;
 }
+
 /*
 We can also do individually, like:
 
@@ -131,16 +132,16 @@ Now with margin we have the same as padding, but it will be outside the border.
 Display property:
 */
 
-.first, .sec{
+.first, .sec {
     display: inline;
     margin: 10px;
 }
 
-.third, .fourth{
+.third, .fourth {
     display: block;
 }
 
-.inlineblock, .inlineblockB{
+.inlineblock, .inlineblockB {
     display: inline-block;
     margin: 10px;
 }
@@ -161,7 +162,7 @@ div{
 
 /*Pseudo-classes*/
 
-button:hover{
+button:hover {
     background-color: aquamarine;
     transition: .6s ease all;
     transform: translateY(-4px);
@@ -194,7 +195,7 @@ div {
 /*Shadow*/
 
 .shadow {
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); /* x-offset y-offset blur spread color */
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); /* x-offset y-offset blur spread color */
 }
 
 /*
@@ -209,8 +210,12 @@ Like this site: https://developer.mozilla.org/en-US/docs/Web/CSS/animation
 */
 
 @keyframes colorchange {
-    from {background-color: red;}
-    to {background-color: yellow;}
+    from {
+        background-color: red;
+    }
+    to {
+        background-color: yellow;
+    }
 }
 
 .animation {
@@ -272,7 +277,12 @@ body {
 }
 */
 
+/* manipulating css with js */
 
+.text--special {
+    color: crimson;
+    font-size: 35px;
+}
 
 
 

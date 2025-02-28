@@ -211,6 +211,7 @@ for (let i = newNames.length - 1; i >= newNames.length - 3; i--) { // newNames.l
     console.log(newNames[i] + ' is a good person')
 }
 
+// interacting with HTML and CSS (DOM manipulation)
 
 
 
