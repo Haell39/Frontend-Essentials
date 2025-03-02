@@ -200,3 +200,81 @@ console.log(variable)
 
 // more arrow functions
 
+/*
+function myFunction() {
+    return console.log('Hello World')
+}
+*/
+
+// arrow function
+
+const myFunction = () => console.log('Hello World Exemplo')
+myFunction()
+
+// ES7
+
+const cars = ['BMW', 'Audi', 'Ferrari', 'Porsche']
+
+const find = cars.map(car => car === 'Audi')
+console.log(find)
+
+// Now with includes
+
+const find2 = cars.includes('Porsche')
+console.log(find2)
+
+const find3 = 'Ferrari'.includes('r')
+console.log(find3)
+
+// exponencial
+
+const square = (x) => x ** 2
+console.log(square(9))
+
+// ES8
+
+// padStart e padEnd
+
+const phoneNumber = '123456789'
+console.log(phoneNumber.padStart(17, '9'))
+console.log(phoneNumber.padEnd(17, '5'))
+
+// Object.values e Object.entries
+
+const obj3 = {
+    user1: 'Nutella',
+    user2: '25',
+    user3: '123456789'
+}
+
+// before:
+
+Object.keys(obj3).forEach((key, index) => {
+    console.log(key, obj3[key])
+})
+
+// now:
+
+Object.values(obj3).forEach(value => console.log(value)
+)
+
+Object.entries(obj3).forEach(value => console.log(value))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
