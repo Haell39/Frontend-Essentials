@@ -125,18 +125,78 @@ switch (num) {
         console.log('Number is not defined')
 }
 
+// arrow function
+
+const sum = (a, b) => a + b
+console.log(sum(78, 99))
+
+// destructuring objects
+
+const obj = {
+    name: 'kaka',
+    age: 22,
+    phone: 778456789,
+}
+
+// sem a destruturação:
+
+/*
+
+const name = obj.name
+const age = obj.age
+const phone = obj.phone
+*/
 
 
+// com a destruturação:
 
+/*
+const {name, age, phone} = obj
+*/
 
+//Exemplo Real:
 
+const pessoa = {
+    nome: 'Rael',
+    idade: 24,
+    telefone: 81999654790
+}
+// ** Renomeando variáveis é possivel mudar o nome da variável:
+const {nome: nomeCompleto, idade: anos, telefone: celular} = pessoa
 
+console.log(nomeCompleto)
+console.log(anos)
 
+// ** Se uma propriedade não existir
 
+const {nome, cidade = "Desconhecida"} = pessoa
+console.log(cidade)
 
+// ** Usando em funções
 
+function saudar({nome, idade}) {
+    console.log(`Olá, ${nome} de ${idade} anos!`)
+}
 
+saudar(pessoa)
 
+// propriedade_computada
 
+const nome2 = 'test_prop'
 
+const obj2 = {
+    [2 ** 5]: 'propriedade_computada',
+    age: 25,
+}
+
+console.log(obj2[32])
+
+// Template String
+
+const notebook = 'AcerN'
+// const variable = 'minha marca é ' + notebook
+const variable = `minha marca é ${notebook}`
+console.log(variable)
+
+// more arrow functions
 
