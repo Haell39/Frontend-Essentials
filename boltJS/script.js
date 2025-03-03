@@ -260,16 +260,66 @@ Object.values(obj3).forEach(value => console.log(value)
 
 Object.entries(obj3).forEach(value => console.log(value))
 
+// callback functions
 
+/*
+function myCallback(callback) {
+    setTimeout(() => {
+        callback(null, 'Hello World')
+    }, 1000)
+}
 
+myCallback(function (err, result) {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(result)
+    }
+})
+*/
 
+// promise
 
+/*
+function myCallback() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            return resolve('Feito')
+        }, 1000)
+    })
+}
 
+myCallback()
+    .then(result => {
+        console.log(result)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+*/
 
+// async await
 
+function myCallback() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            return resolve('Feito')
+        }, 1000)
+    })
+}
 
+async function doTasks() {
+    try {
+        const result = await myCallback()
+        const result2 = await myCallback()
 
+        console.log(result)
+    } catch (error) {
+        console.log(error)
+    }
+}
 
+doTasks()
 
 
 
